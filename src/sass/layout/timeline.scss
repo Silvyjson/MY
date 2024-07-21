@@ -1,33 +1,27 @@
-.timeline-section {
-  @include bp(400px) {
-    border: 1px solid $secondary-color;
-  }
-}
-
 .timeline-title {
   @include display-style();
+  width: 100%;
   gap: 20px;
 
   @include bp(400px) {
-    flex-direction: column;
     gap: 0;
   }
 
   h3 {
-    @include display-style();
+    @include display-style;
     border: 2px solid $highlight-color;
-    height: 60px;
+    text-align: center;
     width: 100%;
-    padding: 10px;
+    height: 60px;
     cursor: pointer;
+    padding: 5px;
     background-color: transparent;
 
-    @include font-style(
-      $size: 1.5rem,
-      $weight: 600,
-      $line-height: 3rem,
-      $letter-space: 0.5rem
-    );
+    @include font-style($size: 1.5rem, $weight: 600, $letter-space: 0.5rem);
+
+    @include bp(380px) {
+      font-size: 1.2rem;
+    }
   }
 }
 
@@ -94,12 +88,9 @@
     flex: 1;
   }
 
-  @include bp(650px) {
-    order: 3;
-  }
-
   @include bp(550px) {
     padding-right: 15px;
+    order: 3;
   }
 
   :nth-child(2) {

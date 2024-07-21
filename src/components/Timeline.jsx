@@ -6,11 +6,11 @@ const ExperienceTimeline = () => (
     <div className="timeline-item">
       <div className='timelime-info'>
         <i>2023 - present</i>
-        <p>Freelance</p>
       </div>
       <div className='border'><div /></div>
       <div className='timeline-details'>
-        <h4>Full Stack Developer</h4>
+        <h4>Freelance</h4>
+        <p>Full Stack Developer</p>
         <ul>
           <li>Delivered high-quality web applications with responsive design and optimal performance.</li>
           <li>Developed and maintained websites and web applications using HTML, CSS, JavaScript, React, and Node.js.</li>

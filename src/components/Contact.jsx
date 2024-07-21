@@ -34,7 +34,15 @@ function Contact() {
                 },
                 body: JSON.stringify(formData),
             });
-            setStatus('Email sent');
+            setStatus('Sent');
+
+            setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                subject: '',
+                message: '',
+            });
         }
         catch (error) {
             setStatus("Failed to send");
