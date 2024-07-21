@@ -105,10 +105,10 @@ function Contact() {
                         </span>
                     </article>
                     <div className="social-icon">
-                        <a href="https://www.linkedin.com/in/mbadughasilvia/" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/in/mbadugha-silvia-ab6a48262" target="_blank" rel="noopener noreferrer">
                             <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
                         </a>
-                        <a href="https://github.com/mbadughasilvia" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/Silvyjson" target="_blank" rel="noopener noreferrer">
                             <img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
                         </a>
                     </div>
