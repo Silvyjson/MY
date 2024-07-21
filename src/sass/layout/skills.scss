@@ -1,0 +1,43 @@
+.skills-content {
+  @include display-grid($column: auto auto auto, $row: auto);
+  gap: 30px;
+
+  @include bp(1010px) {
+    @include display-grid($column: auto auto, $row: auto);
+  }
+
+  @include bp(580px) {
+    @include display-grid($column: auto, $row: auto);
+  }
+}
+
+.skill-icon {
+  @include display-style($justify: normal);
+  gap: 5px;
+  width: 100%;
+}
+
+.skills-item {
+  @include display-style($direction: column);
+  gap: 10px;
+  width: 100%;
+
+  i {
+    @include display-style($justify: space-between);
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  meter {
+    width: 100%;
+    height: 10px;
+  }
+
+  meter::-webkit-meter-bar {
+    background: $primary-color;
+  }
+
+  meter::-webkit-meter-optimum-value {
+    background: $highlight-color;
+  }
+}

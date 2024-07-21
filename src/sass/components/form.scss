@@ -1,0 +1,46 @@
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px 40px 40px;
+  position: relative;
+
+  @include sm {
+    padding: 20px 20px 40px;
+  }
+
+  textarea,
+  input {
+    @include font-style();
+    border: none;
+    height: 35px;
+    width: 100%;
+    padding: 0 10px;
+    outline: none;
+    background-color: $transparent-color;
+    border-bottom: 3px solid $highlight-color;
+
+    @include md {
+      width: 100%;
+    }
+  }
+
+  textarea {
+    height: 50px;
+    resize: none;
+  }
+
+  button {
+    color: $primary-color;
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    background-color: $highlight-color;
+    cursor: pointer;
+
+    i {
+      margin-left: 10px;
+    }
+  }
+}

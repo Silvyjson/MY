@@ -1,0 +1,88 @@
+.projects-container {
+  @include display-grid($column: auto auto auto, $row: auto);
+  gap: 30px;
+
+  @include bp(1010px) {
+    @include display-grid($column: auto auto, $row: auto);
+  }
+
+  @include bp(580px) {
+    @include display-grid($column: auto, $row: auto);
+  }
+}
+
+.projects-item {
+  position: relative;
+  min-width: 300px;
+  width: 100%;
+  aspect-ratio: 10/5;
+  transition: transform 2s ease-in-out;
+
+  @include bp(700px) {
+    min-width: 250px;
+  }
+
+  @include bp(580px) {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  img {
+    @include sizes($primary-width, $primary-height);
+  }
+}
+
+.font-awesome {
+  @include display-style();
+  gap: 20px;
+
+  .fa-icon {
+    @include display-style();
+    width: 40px;
+    height: 40px;
+    color: $dark-background-color;
+    background-color: $secondary-color;
+    font-size: 1rem;
+    transition: width 0.5s ease-in-out;
+    cursor: pointer;
+  }
+
+  .fa-icon:hover {
+    transform: scale(1.25);
+    color: $secondary-color;
+    background-color: $dark-text-color;
+  }
+}
+
+.tech-stack {
+  @include font-style();
+  @include display-style();
+  gap: 5px;
+}
+
+.projects-content {
+  @include display-style($direction: column, $justify: space-between);
+  @include sizes($primary-width, $primary-height);
+  position: absolute;
+  top: 0;
+  gap: 10px;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  color: $primary-color;
+  background-color: rgba(92, 104, 116, 0.8);
+  text-align: center;
+  border: 8px groove $secondary-color;
+
+  h3 {
+    font-size: 0.99rem;
+  }
+
+  p {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: $secondary-color;
+  }
+}

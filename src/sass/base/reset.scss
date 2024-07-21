@@ -1,0 +1,101 @@
+.menu-icon {
+  display: none;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+
+  > * {
+    background-color: $dark-background-color;
+    height: 4px;
+    margin: 6px 0;
+  }
+
+  @include lg {
+    display: block;
+    margin-right: 30px;
+  }
+}
+
+.menu-icon div:nth-child(2) {
+  width: 15px;
+}
+
+.menu-icon.open div:nth-child(1) {
+  width: 20px;
+  transform: rotate(-45deg) translate(-3px, 3px);
+}
+
+.menu-icon.open div:nth-child(2) {
+  width: 20px;
+  transform: rotate(45deg) translate(-4px, -4px);
+}
+
+.Load-page {
+  @include display-style;
+  height: 100vh;
+  width: 100vw;
+
+  .load-page-circle {
+    @include display-style;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 5px ridge $dark-background-color;
+    border-radius: 50%;
+    animation: rotateAnimation 2s linear infinite;
+  }
+
+  .circularDiv {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: $dark-background-color;
+    border-radius: 50%;
+    animation: rotateAnimation1 2s linear infinite;
+  }
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes rotateAnimation1 {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.error {
+  @include display-style;
+  width: 100vw;
+  height: 100vh;
+  font-size: 20px;
+}
+
+.toggle {
+  @include display-style($justify: flex-end);
+  height: 50px;
+  margin: 20px 0;
+  @include font-style($size: 1.2rem, $line-height: 2rem);
+
+  span {
+    @include display-style;
+    border: 2px solid $highlight-color;
+    padding: 0 10px;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  span:hover {
+    background-color: rgba(92, 104, 116, 0.1);
+  }
+}

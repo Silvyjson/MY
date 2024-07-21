@@ -1,0 +1,103 @@
+.nav_section {
+  @include display-style($justify: space-between);
+  background-color: $page-background-color;
+  color: $dark-text-color;
+  padding: 5px 30px;
+  width: 1100px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  transition: background-color 2s ease;
+  box-shadow: 0px 4px 4px 0 rgba(128, 0, 128, 0.5);
+
+  @include bp($bp: 1200px) {
+    width: 100vw;
+    @include display-style($justify: space-evenly);
+  }
+
+  @include lg {
+    @include display-grid($column: auto auto, $row: 1fr);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    padding-top: 10px;
+    gap: 10px;
+  }
+
+  .avatar-logo {
+    @include display-style($justify: normal);
+    flex: 1.5;
+    height: 50px;
+
+    h1 {
+      @include font-style($size: 2.1rem, $weight: 600, $line-height: 3rem);
+      margin-left: 20px;
+    }
+  }
+
+  menu {
+    @include display-style($justify: space-between);
+    gap: 25px;
+    flex: 3;
+    padding: 10px 0;
+
+    ul {
+      @include display-style();
+      gap: 25px;
+
+      @include lg {
+        @include display-style($direction: column);
+        width: 100%;
+        gap: 20px;
+      }
+
+      li {
+        @include display-style();
+        width: 100%;
+        cursor: pointer;
+      }
+
+      li:hover {
+        transform: scale(1.1);
+        font-weight: bolder;
+        color: $highlight-color;
+      }
+    }
+
+    @include lg {
+      @include display-style($display: none, $direction: column);
+      gap: 15px;
+      grid-column: 1 / span 2;
+      border-top: 5px groove $highlight-color;
+      border-bottom: 5px groove $highlight-color;
+    }
+  }
+
+  p {
+    @include display-style();
+    width: 100px;
+    height: 40px;
+    border: 2px solid $highlight-color;
+    cursor: pointer;
+
+    @include lg {
+      border: none;
+      width: 100%;
+      height: auto;
+    }
+  }
+  p:hover {
+    background-color: rgba(92, 104, 116, 0.5);
+    color: $highlight-color;
+
+    @include lg {
+      background-color: transparent;
+      transform: scale(1.1);
+      font-weight: bolder;
+    }
+  }
+}
+
+.open_profile {
+  display: flex !important;
+}
