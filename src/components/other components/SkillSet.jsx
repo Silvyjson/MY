@@ -79,7 +79,7 @@ export const SkillSet = [
   },
   {
     name: "Redux",
-    percentage: 30,
+    percentage: 50,
     image: {
       public_id: "1706286913147-nwiky8",
       url: "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706286913147-nwiky8",
@@ -109,7 +109,7 @@ export const SkillSet = [
   },
   {
     name: "TypeScript",
-    percentage: 30,
+    percentage: 50,
     image: {
       public_id: "1706287104739-pm8en",
       url: "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706287104739-pm8en",

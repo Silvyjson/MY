@@ -36,20 +36,6 @@
     color: $primary-color;
   }
 
-  .timeline-section {
-    @include bp(550px) {
-      border: 2px solid $dark-text-color;
-    }
-  }
-
-  .timeline-title {
-    h3 {
-      @include bp(550px) {
-        border-color: $dark-text-color;
-      }
-    }
-  }
-
   .border {
     background-color: $secondary-color;
   }

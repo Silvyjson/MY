@@ -1,6 +1,6 @@
 .timeline-section {
-  @include bp(550px) {
-    border: 2px solid $secondary-color;
+  @include bp(400px) {
+    border: 1px solid $secondary-color;
   }
 }
 
@@ -8,7 +8,7 @@
   @include display-style();
   gap: 20px;
 
-  @include bp(550px) {
+  @include bp(400px) {
     flex-direction: column;
     gap: 0;
   }
@@ -20,6 +20,7 @@
     width: 100%;
     padding: 10px;
     cursor: pointer;
+    background-color: transparent;
 
     @include font-style(
       $size: 1.5rem,
@@ -27,14 +28,6 @@
       $line-height: 3rem,
       $letter-space: 0.5rem
     );
-
-    @include bp(550px) {
-      border-color: $secondary-color;
-    }
-  }
-
-  h3:hover {
-    background-color: rgba(92, 104, 116, 0.5);
   }
 }
 
@@ -43,7 +36,7 @@
   gap: 40px;
   margin-top: 30px;
 
-  @include bp(650px) {
+  @include bp(550px) {
     @include display-style(
       $direction: column,
       $justify: normal,
@@ -57,7 +50,7 @@
   background-color: $dark-background-color;
   position: relative;
 
-  @include bp(650px) {
+  @include bp(550px) {
     width: 100%;
     height: 3px;
     order: 3;
@@ -73,7 +66,7 @@
     color: $dark-text-color;
     background-color: $highlight-color;
 
-    @include bp(650px) {
+    @include bp(550px) {
       bottom: -18px;
     }
   }
@@ -81,7 +74,7 @@
 
 .mdborder {
   div {
-    @include md {
+    @include bp(550px) {
       left: auto;
       right: -18px;
     }
@@ -151,11 +144,15 @@
 .tiI {
   margin-top: 45px;
 
-  @include md {
+  @include bp(550px) {
     margin-top: 0;
   }
 }
 
 .tdh3 {
   margin-bottom: 20px;
+}
+
+.bg-color {
+  background-color: $highlight-color !important;
 }

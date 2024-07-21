@@ -63,18 +63,20 @@ const EducationTimeline = () => (
 );
 
 const Timeline = () => {
-
+  const [seletedTab, setSeletedTab] = useState('experience')
   const [showExperience, setShowExperience] = useState(true);
   const [showEducation, setShowEducation] = useState(false);
 
   const handleGetExperience = () => {
     setShowExperience(true);
     setShowEducation(false);
+    setSeletedTab('experience');
   };
 
   const handleGetEducation = () => {
     setShowExperience(false);
     setShowEducation(true);
+    setSeletedTab('education');
   };
 
   const fadeInAnimationVariants = {
@@ -102,8 +104,8 @@ const Timeline = () => {
       }}
     >
       <div className='timeline-title'>
-        <h3 onClick={handleGetExperience}>Experience</h3>
-        <h3 onClick={handleGetEducation}>Education</h3>
+        <h3 onClick={handleGetExperience} className={seletedTab === 'experience' ? "bg-color" : ""}>Experience</h3>
+        <h3 onClick={handleGetEducation} className={seletedTab === 'education' ? "bg-color" : ""}>Education</h3>
       </div>
       {showExperience && <ExperienceTimeline />}
       {showEducation && <EducationTimeline />}
