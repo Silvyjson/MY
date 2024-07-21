@@ -125,6 +125,6 @@ export const SkillSet = [
       url: "https://mbadugha-silvia.web.app/assets/firebase-DZyFJew0.png",
       _id: "65b3e228b40589dfcae18721",
     },
-    _id: "65b3df24b48589dfcae18114",
+    _id: "65g3df24d48589dfcae17610",
   }
 ];

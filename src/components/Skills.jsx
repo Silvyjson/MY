@@ -54,7 +54,7 @@ const Skills = () => {
                 <div id={`project-percent-${_id}`} style={{ height: heights[_id] }} />
               </div>
             </span>
-            <label htmlFor={name}>{name}</label>
+            <p>{name}</p>
           </motion.div>
         ))}
       </div>

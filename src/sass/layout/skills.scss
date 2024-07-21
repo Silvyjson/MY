@@ -8,7 +8,7 @@
   @include display-style($direction: column);
   gap: 10px;
 
-  label {
+  p {
     font-style: italic;
   }
 }
@@ -36,12 +36,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   position: absolute;
+  padding: 10px;
 
   i {
     color: red;
     font-weight: 600;
+    display: none;
   }
 
   img {

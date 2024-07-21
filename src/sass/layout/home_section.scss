@@ -118,6 +118,12 @@
   }
 
   .download {
-    margin-left: 10px;
+    .downloadFA {
+      margin-left: 10px;
+    }
+
+    a {
+      color: black;
+    }
   }
 }

@@ -1,7 +1,54 @@
+import { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from 'framer-motion';
 
 function Contact() {
+    const [loading, setLoading] = useState(false)
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+    });
+
+    const [status, setStatus] = useState(null);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevData => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        try {
+            e.preventDefault();
+            setLoading(true);
+
+            await fetch('https://my-portfolio-backend-3yl5.onrender.com/api/sendMail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+            setStatus('Email sent');
+        }
+        catch (error) {
+            setStatus("Failed to send");
+            setLoading(false);
+        } finally {
+            setLoading(false);
+        }
+    }
+
+    if (status) {
+        setTimeout(function () {
+            setStatus(null);
+        }, 5000)
+    }
 
     const fadeInAnimationVariants = {
         initial: {
@@ -30,10 +77,10 @@ function Contact() {
             <h2>Contact</h2>
             <div className="contact-container">
                 <div className="contact-border">
-                    <h1>Let&apos;s discuss on something <b>cool</b> together</h1>
+                    <h1>Let&apos;s discuss something <b>cool</b> together</h1>
                     <article>
                         <span>
-                            <FontAwesomeIcon icon=" fa-location-dot" className="contact-font-icon" />
+                            <FontAwesomeIcon icon="fa-location-dot" className="contact-font-icon" />
                             <p>Abuja, Nigeria</p>
                         </span>
                         <span>
@@ -44,7 +91,6 @@ function Contact() {
                         </span>
                         <span>
                             <a href="mailto:mbadughasilvia@gmail.com">
-
                                 <FontAwesomeIcon icon="fa-envelope" className="contact-font-icon" />
                                 <p>mbadughasilvia@gmail.com</p>
                             </a>
@@ -61,12 +107,62 @@ function Contact() {
                 </div>
                 <div className="form-section">
                     <blockquote className="quote">&quot;Live the Life as you want,,</blockquote>
-                    <form className="contact_form">
-                        <input type="text" placeholder="Name" required />
-                        <input type="email" placeholder="Email" required />
-                        <input type="text" placeholder="Phone" required />
-                        <textarea placeholder="Message" required />
-                        <button><FontAwesomeIcon icon="fa-solid fa-paper-plane" /><i>Send</i></button>
+                    <form className="contact_form" onSubmit={handleSubmit}>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                        <input
+                            type="text"
+                            name="phone"
+                            placeholder="Phone"
+                            value={formData.phone}
+                            onChange={handleChange}
+                        />
+                        <input
+                            type="text"
+                            name="subject"
+                            placeholder="Subject"
+                            value={formData.subject}
+                            onChange={handleChange}
+                            required
+                        />
+                        <textarea
+                            name="message"
+                            placeholder="Message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                        />
+                        <button type="submit">
+                            {status ? (
+                                <b>
+                                    <FontAwesomeIcon icon="fa-solid fa-circle-check" className='checkFA' />
+                                    {status}
+                                </b>
+                            ) : (
+                                loading ? (
+                                    <FontAwesomeIcon icon="fa-spinner" spin />
+                                ) : (
+                                    <>
+                                        <FontAwesomeIcon icon="fa-solid fa-paper-plane" />
+                                        <i>Send</i>
+                                    </>
+                                )
+                            )}
+                        </button>
                     </form>
                 </div>
             </div>
