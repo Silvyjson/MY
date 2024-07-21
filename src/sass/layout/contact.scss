@@ -86,13 +86,20 @@
 
     span {
       @include display-style($justify: normal);
-      gap: 15px;
+      gap: 10px;
       border: 1px solid $primary-color;
       width: 250px;
       height: 50px;
       border-radius: 12px;
       padding: 10px;
       cursor: pointer;
+
+      a {
+        @include display-style($justify: normal);
+        gap: 10px;
+        text-decoration: none;
+        color: black;
+      }
     }
 
     span:hover {

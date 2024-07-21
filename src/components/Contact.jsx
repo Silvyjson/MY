@@ -37,12 +37,17 @@ function Contact() {
                             <p>Abuja, Nigeria</p>
                         </span>
                         <span>
-                            <FontAwesomeIcon icon="fa-phone" className="contact-font-icon" />
-                            <p>+2348144426644</p>
+                            <a href="tel:+2348144426644">
+                                <FontAwesomeIcon icon="fa-phone" className="contact-font-icon" />
+                                <p>+2348144426644</p>
+                            </a>
                         </span>
                         <span>
-                            <FontAwesomeIcon icon="fa-envelope" className="contact-font-icon" />
-                            <p>mbadughasilvia@gmail.com</p>
+                            <a href="mailto:mbadughasilvia@gmail.com">
+
+                                <FontAwesomeIcon icon="fa-envelope" className="contact-font-icon" />
+                                <p>mbadughasilvia@gmail.com</p>
+                            </a>
                         </span>
                     </article>
                     <div className="social-icon">
