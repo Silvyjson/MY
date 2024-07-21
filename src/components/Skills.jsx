@@ -1,14 +1,17 @@
-import { useState } from "react";
 import { motion } from 'framer-motion';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from 'react';
 import { SkillSet } from "./other components/SkillSet";
 
 const Skills = () => {
-  const [showAllSkills, setShowAllSkills] = useState(false);
+  const [heights, setHeights] = useState({});
 
-  const toggleShowAllSkills = () => {
-    setShowAllSkills(!showAllSkills);
-  };
+  useEffect(() => {
+    const heights = {};
+    SkillSet.forEach(skill => {
+      heights[skill._id] = `${skill.percentage}%`;
+    });
+    setHeights(heights);
+  }, []);
 
   const fadeInAnimationVariants = {
     initial: {
@@ -16,34 +19,24 @@ const Skills = () => {
       y: 50,
     },
     animate: (index) => {
-      if (0.1 * index >= 0.5) {
-        return {
-          y: 0,
-          opacity: 1,
-          transition: {
-            delay: 0.5,
-            duration: 1,
-          }
+      const delay = 0.1 * index >= 0.5 ? 0.5 : 0.1 * index;
+      return {
+        y: 0,
+        opacity: 1,
+        transition: {
+          delay: delay,
+          duration: 1,
         }
-      } else {
-        return {
-          y: 0,
-          opacity: 1,
-          transition: {
-            delay: 0.1 * index,
-            duration: 1,
-          }
-        }
-      }
+      };
     }
-  }
+  };
 
   return (
     <section className="section" id="skills">
       <h2>Skills</h2>
-      <div className='skills-content'>
-        {(showAllSkills ? SkillSet : SkillSet.slice(0, 9)).map((skill, index) => (
-          <motion.div key={skill._id} className="skills-item"
+      <div className="skills-content">
+        {SkillSet.map(({ _id, name, percentage, image }, index) => (
+          <motion.div key={_id} className="skills-item"
             variants={fadeInAnimationVariants}
             initial="initial"
             whileInView="animate"
@@ -52,22 +45,18 @@ const Skills = () => {
             }}
             custom={index}
           >
-            <span className="skill-icon">
-              <img src={skill.image.url} alt={skill.name} width={40} />
-              <meter value={skill.percentage} min="0" max="100"></meter>
+            <span>
+              <div className="project-circle">
+                <span className='skill-icon'>
+                  <i>{percentage}%</i>
+                  <img src={image.url} alt={name} width={40} />
+                </span>
+                <div id={`project-percent-${_id}`} style={{ height: heights[_id] }} />
+              </div>
             </span>
-            <i>
-              <p htmlFor={skill.name}>{skill.name}</p>
-              <p htmlFor={skill.name}>{skill.percentage}%</p>
-            </i>
+            <label htmlFor={name}>{name}</label>
           </motion.div>
         ))}
-      </div>
-      <div onClick={toggleShowAllSkills} className="toggle">
-        <span>
-          <p>{showAllSkills ? 'show less' : 'show more'}</p>
-          <FontAwesomeIcon icon={showAllSkills ? 'fa-angle-up' : 'fa-angle-down'} />
-        </span>
       </div>
     </section>
   );

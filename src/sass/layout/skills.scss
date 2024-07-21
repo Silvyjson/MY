@@ -1,43 +1,50 @@
 .skills-content {
-  @include display-grid($column: auto auto auto, $row: auto);
-  gap: 30px;
-
-  @include bp(1010px) {
-    @include display-grid($column: auto auto, $row: auto);
-  }
-
-  @include bp(580px) {
-    @include display-grid($column: auto, $row: auto);
-  }
-}
-
-.skill-icon {
   @include display-style($justify: normal);
-  gap: 5px;
-  width: 100%;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .skills-item {
   @include display-style($direction: column);
   gap: 10px;
+
+  label {
+    font-style: italic;
+  }
+}
+
+.project-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: $primary-color;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 4px 4px 0 rgba(128, 0, 128, 0.5);
+
+  div {
+    width: 100%;
+    background-color: $highlight-color;
+  }
+}
+
+.skill-icon {
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
 
   i {
-    @include display-style($justify: space-between);
-    width: 100%;
-    padding: 0 15px;
+    color: black;
   }
 
-  meter {
-    width: 100%;
-    height: 10px;
-  }
-
-  meter::-webkit-meter-bar {
-    background: $primary-color;
-  }
-
-  meter::-webkit-meter-optimum-value {
-    background: $highlight-color;
+  img {
+    width: 25px;
+    height: 25px;
   }
 }

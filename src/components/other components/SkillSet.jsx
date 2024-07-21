@@ -29,7 +29,7 @@ export const SkillSet = [
   },
   {
     name: "Tailwind",
-    percentage: 40,
+    percentage: 50,
     image: {
       public_id: "1706286616701-2jka3q",
       url: "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706286616701-2jka3q",

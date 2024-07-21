@@ -36,13 +36,6 @@
     color: $primary-color;
   }
 
-  .skills-item {
-    img {
-      background-color: $page-background-color;
-      border-radius: 50%;
-    }
-  }
-
   .timeline-section {
     @include bp(550px) {
       border: 2px solid $dark-text-color;
