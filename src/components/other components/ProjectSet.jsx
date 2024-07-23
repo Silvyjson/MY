@@ -43,7 +43,7 @@ export const ProjectSet = [
         "_id": "65b3d99dd017f6b49c778c86",
     },
     {
-        "liveurl": "https://justkleaning-app.web.app/",
+        "liveurl": "https://silvyjson.github.io/JustKleaning/",
         "githuburl": "https://github.com/Silvyjson/JustKleaning",
         "title": "JustKleaning",
         "sequence": 3,
