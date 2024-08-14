@@ -6,7 +6,7 @@ import projectImage5 from '../../assets/ProjectImage5.png'
 import projectImage6 from '../../assets/ProjectImage6.png'
 import projectImage7 from '../../assets/ProjectImage7.png'
 import projectImage8 from '../../assets/ProjectImage8.png'
-// import projectImage9 from '../../assets/ProjectImage9.png'
+import projectImage9 from '../../assets/ProjectImage9.png'
 
 
 export const ProjectSet = [
@@ -74,12 +74,28 @@ export const ProjectSet = [
         "_id": "65b3d969d017f6b49c778c4a",
     },
     {
+        "liveurl": "#",
+        "githuburl": "#",
+        "title": "Gamma Fleet",
+        "sequence": 6,
+        "image": {
+            "path": projectImage5
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+        "techStack": [
+            " Reactjs ",
+            " Nodejs ",
+            " scss"
+        ],
+        "_id": "65b3d952d017f6b49c778c16",
+    },
+    {
         "liveurl": "https://trippa-wxfu.onrender.com",
         "githuburl": "https://github.com/Silvyjson/Trippa",
         "title": "Trippa",
         "sequence": 5,
         "image": {
-            "path": projectImage5
+            "path": projectImage6
         },
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
         "techStack": [
@@ -87,21 +103,6 @@ export const ProjectSet = [
             " Tailwind CSS"
         ],
         "_id": "65b3d95dd017f6b49c778c2f",
-    },
-    {
-        "liveurl": "https://silvyjson.github.io/Dynamic-Graph/",
-        "githuburl": "https://github.com/Silvyjson/Dynamic-Graph",
-        "title": "NIFTY",
-        "sequence": 6,
-        "image": {
-            "path": projectImage6
-        },
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-        "techStack": [
-            "Reactjs ",
-            "scss"
-        ],
-        "_id": "65b3d952d017f6b49c778c16",
     },
     {
         "liveurl": "https://silvyjson.github.io/Odin-Assignment-Admin-Dashboard/",
@@ -134,18 +135,17 @@ export const ProjectSet = [
         "_id": "65b3d938d017f6b49c778bea",
     },
     {
-        "liveurl": "#",
-        "githuburl": "#",
-        "title": "Gamma Fleet",
+        "liveurl": "https://silvyjson.github.io/Dynamic-Graph/",
+        "githuburl": "https://github.com/Silvyjson/Dynamic-Graph",
+        "title": "NIFTY",
         "sequence": 9,
         "image": {
-            "path": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706285347449-dniw0h"
+            "path": projectImage9
         },
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
         "techStack": [
             " Reactjs ",
-            " Nodejs ",
-            " Tailwind CSS"
+            " scss"
         ],
         "_id": "65b3d923d017f6b49c778bc6",
     },
