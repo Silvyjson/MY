@@ -74,8 +74,8 @@ export const ProjectSet = [
         "_id": "65b3d969d017f6b49c778c4a",
     },
     {
-        "liveurl": "#",
-        "githuburl": "#",
+        "liveurl": "https://gamma-fleet.web.app/",
+        "githuburl": "https://github.com/Silvyjson/Gamma-Fleet",
         "title": "Gamma Fleet",
         "sequence": 6,
         "image": {
